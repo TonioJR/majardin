@@ -1,84 +1,27 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAJARDIN | Paysagiste Pévèle Carembault & Hainaut</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root { --dark: #1B4332; --lime: #B5D51E; --soft: #F9FBF9; --white: #FFFFFF; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; transition: 0.3s ease; }
-        body { background: var(--soft); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
-
-        /* HEADER UNIFIÉ AVEC MENU MOBILE */
-        header { background: var(--white); padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 5px solid var(--lime); position: sticky; top: 0; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .logo-img { height: 65px !important; width: auto; display: block; }
-        
-        nav { display: flex; gap: 25px; align-items: center; }
-        nav a { text-decoration: none; color: var(--dark); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-        .btn-devis-nav { background: var(--dark); color: var(--lime) !important; width: 130px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 900; }
-        .btn-devis-nav:hover { transform: scale(1.1); background: #255a43; }
-
-        .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--dark); background: none; border: none; }
-
-        /* HERO */
-        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('photo-couverture.jpg') no-repeat top center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 20px; }
-        .hero h1 { font-size: clamp(2rem, 8vw, 3.5rem); text-transform: uppercase; letter-spacing: 4px; font-weight: 800; }
-        .hero b { color: var(--lime); }
-
-        section { padding: 80px 10%; max-width: 1200px; margin: auto; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 5px solid var(--lime); }
-
-        footer { background: var(--dark); color: white; padding: 60px 10%; text-align: center; margin-top: 50px; }
-        .socials { font-size: 2rem; margin: 20px 0; }
-        .socials a { color: white; margin: 0 15px; text-decoration: none; }
-        .socials a:hover { color: var(--lime); transform: translateY(-5px); display: inline-block; }
-
-        @media (max-width: 1024px) {
-            .hamburger { display: block; }
-            nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 30px; border-bottom: 5px solid var(--lime); gap: 20px; }
-            nav.active { display: flex; }
-        }
-    </style>
-</head>
 <body>
-    <header>
-        <a href="index.html"><img src="logo.png" alt="MAJARDIN" class="logo-img"></a>
-        <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
-        <nav id="mainNav">
-            <a href="index.html">Accueil</a>
-            <a href="equipe.html">L'Équipe</a>
-            <a href="realisations.html">Réalisations</a>
-            <a href="avis.html">Témoignages</a>
-            <a href="contact.html" class="btn-devis-nav">Devis</a>
-        </nav>
-    </header>
-
-    <div class="hero">
-        <h1>Votre Jardin, <b>Notre Passion</b></h1>
-        <p>Expertise Paysagère en Pévèle & Hainaut</p>
-    </div>
-
     <section>
-        <h2 style="text-transform: uppercase; letter-spacing: 2px;">Nos Savoir-Faire</h2>
+        <h2 style="text-transform: uppercase; margin-bottom: 50px;">L'Âme de MAJARDIN</h2>
         <div class="grid">
-            <div class="card"><h3>🌱 Création</h3><p>Terrasses, massifs paysagers et aménagement complet.</p></div>
-            <div class="card"><h3>✂️ Entretien</h3><p>Taille raisonnée, tonte et gestion de vos extérieurs.</p></div>
-            <div class="card"><h3>🌳 Élagage</h3><p>Soins arboricoles et interventions complexes toutes hauteurs.</p></div>
+            <div class="card">
+                <img src="arthur.jpg" style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:20px; border:6px solid #F9FBF9; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <h3>Arthur</h3>
+                <span style="color:var(--lime); font-weight:800; display:block; margin-bottom:15px; text-transform:uppercase;">Co-fondateur • Expert Création</span>
+                <p style="text-align:left; font-size:0.9rem;">Architecte de vos extérieurs, Arthur imagine et coordonne vos chantiers avec précision. Son œil pour les volumes transforme votre jardin en une extension de votre maison.</p>
+            </div>
+            <div class="card">
+                <img src="martin.jpg" style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:20px; border:6px solid #F9FBF9; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <h3>Martin</h3>
+                <span style="color:var(--lime); font-weight:800; display:block; margin-bottom:15px; text-transform:uppercase;">Co-fondateur • Expert Élagage</span>
+                <p style="text-align:left; font-size:0.9rem;">Maître du végétal et de la hauteur, Martin assure la santé et la sécurité de vos arbres. Il intervient avec une rigueur technique irréprochable sur tout type de sujet.</p>
+            </div>
+            <div class="card">
+                <img src="justin.jpg" style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:20px; border:6px solid #F9FBF9; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <h3>Justin</h3>
+                <span style="color:var(--lime); font-weight:800; display:block; margin-bottom:15px; text-transform:uppercase;">Co-fondateur • Expert Entretien</span>
+                <p style="text-align:left; font-size:0.9rem;">Garant de la pérennité de vos espaces, Justin veille à ce que votre jardin reste impeccable toute l'année. Sa rigueur assure un entretien soigné à chaque passage.</p>
+            </div>
         </div>
     </section>
-
-    <footer>
-        <div class="socials">
-            <a href="https://www.instagram.com/majardinpaysagiste/"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/MAJardinpaysagiste"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/33612267966"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p>06 12 26 79 66 — majardin59@gmail.com</p>
-        <a href="mentions.html" style="color:white; opacity:0.4; font-size:0.8rem; text-decoration:none; display:block; margin-top:20px;">Mentions Légales</a>
-    </footer>
-
     <script>function toggleMenu() { document.getElementById('mainNav').classList.toggle('active'); }</script>
 </body>
 </html>

@@ -6,19 +6,26 @@
     <title>Devis | MAJARDIN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --dark: #1B4332; --lime: #B5D51E; }
+        :root { --dark: #1B4332; --lime: #B5D51E; --white: #FFFFFF; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
         body { background: var(--dark); color: white; line-height: 1.6; }
+
         header { background: white; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 5px solid var(--lime); }
         .logo-img { height: 65px !important; width: auto; }
         nav a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 20px; font-size: 0.85rem; text-transform: uppercase; }
         .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--dark); background: none; border: none; }
-        section { padding: 60px 5%; max-width: 850px; margin: auto; text-align: center; }
+
+        section { padding: 60px 5%; max-width: 900px; margin: auto; text-align: center; }
         .form-box { background: white; color: var(--dark); padding: 45px; border-radius: 15px; text-align: left; margin-top: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-        input, select, textarea { width: 100%; padding: 15px; margin: 10px 0 20px; border-radius: 8px; border: 1px solid #ddd; font-size: 1rem; }
-        .btn-submit { background: var(--lime); color: var(--dark); font-weight: 900; border: none; padding: 22px; width: 100%; border-radius: 8px; cursor: pointer; font-size: 1.2rem; text-transform: uppercase; }
-        footer { padding: 50px; text-align: center; opacity: 0.5; }
-        @media (max-width: 1024px) { .hamburger { display: block; } nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 30px; border-bottom: 5px solid var(--lime); } nav.active { display: flex; } }
+        
+        label { font-weight: 800; font-size: 0.8rem; text-transform: uppercase; color: var(--dark); display: block; margin-bottom: 8px; }
+        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 25px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: #f9f9f9; display: block; }
+        
+        .btn-submit { background: var(--lime); color: var(--dark); font-weight: 900; border: none; padding: 22px; width: 100%; border-radius: 8px; cursor: pointer; font-size: 1.2rem; text-transform: uppercase; transition: 0.3s; }
+        .btn-submit:hover { background: #fff; box-shadow: 0 0 15px var(--lime); }
+
+        footer { padding: 40px; text-align: center; opacity: 0.6; }
+        @media (max-width: 1024px) { .hamburger { display: block; } nav { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background: white; padding: 30px; border-bottom: 5px solid var(--lime); z-index: 10; } nav.active { display: flex; } }
     </style>
 </head>
 <body>
@@ -29,28 +36,45 @@
             <a href="index.html">Accueil</a><a href="equipe.html">L'Équipe</a><a href="realisations.html">Réalisations</a><a href="avis.html">Témoignages</a>
         </nav>
     </header>
+
     <section>
-        <h2 style="color: var(--lime); font-size: 2.8rem; text-transform: uppercase;">Demande de Devis</h2>
+        <h2 style="color: var(--lime); font-size: 2.8rem; text-transform: uppercase;">Votre Devis Gratuit</h2>
         <div class="form-box">
             <form>
-                <label style="font-weight:bold;">Nom & Prénom</label><input type="text" placeholder="Votre nom" required>
-                <label style="font-weight:bold;">Téléphone</label><input type="tel" placeholder="06 00 00 00 00" required>
-                <label style="font-weight:bold;">Ville de l'intervention</label>
+                <label>Nom & Prénom</label>
+                <input type="text" placeholder="Jean Dupont" required>
+                
+                <label>Téléphone</label>
+                <input type="tel" placeholder="06 12 34 56 78" required>
+
+                <label>Ville de l'intervention</label>
                 <select required>
-                    <option value="">Sélectionnez votre ville...</option>
+                    <option value="">Choisissez votre ville...</option>
                     <optgroup label="Pévèle Carembault">
-                        <option>Aix-en-Pévèle</option><option>Attiches</option><option>Auchy-lez-Orchies</option><option>Avelin</option><option>Bachy</option><option>Bersée</option><option>Bouvignies</option><option>Camphin-en-Pévèle</option><option>Cappelle-en-Pévèle</option><option>Chemy</option><option>Cobrieux</option><option>Coutiches</option><option>Cysoing</option><option>Ennevelin</option><option>Genech</option><option>Gondecourt</option><option>Herrin</option><option>Landas</option><option>Louvil</option><option>Mérignies</option><option>Moncheaux</option><option>Mons-en-Pévèle</option><option>Mouchin</option><option>Nomain</option><option>Orchies</option><option>Ostricourt</option><option>Phalempin</option><option>Pont-à-Marcq</option><option>Templeuve-en-Pévèle</option><option>Thumeries</option><option>Tourmignies</option><option>Wahagnies</option><option>Wannehain</option>
+                        <option>Orchies</option><option>Templeuve</option><option>Cysoing</option><option>Pont-à-Marcq</option><option>Aix-en-Pévèle</option><option>Attiches</option><option>Auchy-lez-Orchies</option><option>Avelin</option><option>Bachy</option><option>Bersée</option><option>Bouvignies</option><option>Camphin-en-Pévèle</option><option>Cappelle-en-Pévèle</option><option>Chemy</option><option>Cobrieux</option><option>Coutiches</option><option>Ennevelin</option><option>Genech</option><option>Gondecourt</option><option>Herrin</option><option>Landas</option><option>Louvil</option><option>Mérignies</option><option>Moncheaux</option><option>Mons-en-Pévèle</option><option>Mouchin</option><option>Nomain</option><option>Ostricourt</option><option>Phalempin</option><option>Thumeries</option><option>Tourmignies</option><option>Wahagnies</option><option>Wannehain</option>
                     </optgroup>
                     <optgroup label="Hainaut">
                         <option>Saint-Amand-les-Eaux</option><option>Hasnon</option><option>Lecelles</option><option>Rosult</option><option>Millonfosse</option><option>Nivelle</option><option>Bousignies</option><option>Brillon</option><option>Sars-et-Rosières</option><option>Tilloy-lez-Marchiennes</option>
                     </optgroup>
                 </select>
-                <label style="font-weight:bold;">Type de projet</label>
-                <select required><option>Création / Aménagement</option><option>Entretien Annuel</option><option>Élagage / Abattage</option></select>
+
+                <label>Type de projet</label>
+                <select required>
+                    <option>Création / Aménagement</option><option>Entretien annuel</option><option>Élagage / Abattage</option>
+                </select>
+
+                <label>Message</label>
+                <textarea rows="4" placeholder="Détails du projet..." style="width: 100%; padding: 15px; margin-bottom: 25px; border: 1px solid #ddd; border-radius: 8px;"></textarea>
+
                 <button type="submit" class="btn-submit">Envoyer</button>
             </form>
         </div>
     </section>
+
+    <footer>
+        <p>MAJARDIN SARL — 06 12 26 79 66</p>
+        <a href="mentions.html" style="color:white; opacity: 0.5;">Mentions Légales</a>
+    </footer>
     <script>function toggleMenu() { document.getElementById('mainNav').classList.toggle('active'); }</script>
 </body>
 </html>

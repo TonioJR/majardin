@@ -5,21 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avis Clients | MAJARDIN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root { --dark: #1B4332; --lime: #B5D51E; --soft: #F9FBF9; --white: #FFFFFF; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; transition: 0.3s; }
-        body { background: var(--soft); color: var(--dark); }
-        header { background: var(--white); padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 5px solid var(--lime); position: sticky; top: 0; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .logo-img { height: 65px !important; width: auto; }
+        
+        /* AJOUT : Application de la typo aux titres */
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif !important; }
+
+        /* AJOUT : Protection et préparation de l'effet scroll */
+        body { background: var(--soft); color: var(--dark); -webkit-user-select: none; user-select: none; overflow-x: hidden; }
+        
+        section { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        section.reveal { opacity: 1; transform: translateY(0); }
+
+        /* HEADER UNIFORMISÉ (90px) */
+        header { background: var(--white); padding: 0 5%; height: 90px; display: flex; justify-content: space-between; align-items: center; border-bottom: 5px solid var(--lime); position: sticky; top: 0; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .logo-img { height: 60px !important; width: auto; display: block; }
+        
         nav { display: flex; gap: 25px; align-items: center; }
         nav a { text-decoration: none; color: var(--dark); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
         .btn-devis-nav { background: var(--dark); color: var(--lime) !important; width: 130px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 900; }
+        
         .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--dark); background: none; border: none; }
+        
         section { padding: 80px 10%; max-width: 1100px; margin: auto; text-align: center; }
+        
         .avis-card { background: var(--dark); color: white; padding: 40px; border-radius: 15px; text-align: left; border-left: 8px solid var(--lime); margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .stars { color: var(--lime); margin-bottom: 15px; }
-        footer { background: var(--dark); color: white; padding: 50px 10%; text-align: center; }
-        @media (max-width: 1024px) { .hamburger { display: block; } nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 30px; border-bottom: 5px solid var(--lime); } nav.active { display: flex; } }
+        
+        footer { background: var(--dark); color: white; padding: 60px 10%; text-align: center; }
+
+        @media (max-width: 1024px) { 
+            header { height: 80px; }
+            .hamburger { display: block; } 
+            nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 30px; border-bottom: 5px solid var(--lime); gap: 20px; } 
+            nav.active { display: flex; } 
+        }
     </style>
 </head>
 <body>
@@ -31,6 +53,7 @@
             <a href="contact.html" class="btn-devis-nav">Devis</a>
         </nav>
     </header>
+
     <section>
         <h2 style="font-size: 2.5rem; text-transform: uppercase; margin-bottom: 50px;">Paroles de Clients</h2>
         <div class="avis-card">
@@ -43,43 +66,52 @@
             <a href="mailto:majardin59@gmail.com" style="display:inline-block; margin-top:15px; background:var(--dark); color:var(--lime); padding:12px 25px; text-decoration:none; font-weight:bold; border-radius:4px;">LAISSER UN AVIS</a>
         </div>
     </section>
+
     <footer style="background-color: #1B4332 !important; color: #FFFFFF !important; padding: 60px 5% 40px !important; text-align: center !important; margin-top: 80px !important; border-top: 5px solid #B5D51E !important; width: 100% !important; display: block !important; clear: both !important; position: relative !important; z-index: 1000 !important; left: 0 !important; right: 0 !important;">
-    
-    <div style="margin-bottom: 35px !important; display: block !important; width: 100% !important;">
-        <img src="logo.png" alt="MAJARDIN" style="height: 55px !important; width: auto !important; filter: brightness(0) invert(1) !important; margin: 0 auto 15px !important; display: block !important;">
-        <p style="font-size: 1.1rem !important; font-weight: 300 !important; letter-spacing: 1px !important; opacity: 0.9 !important; margin: 0 !important; color: #FFFFFF !important; display: block !important;">
-            L'excellence paysagère en Pévèle & Hainaut
-        </p>
-    </div>
+        <div style="margin-bottom: 35px !important; display: block !important; width: 100% !important;">
+            <img src="logo.png" alt="MAJARDIN" style="height: 55px !important; width: auto !important; filter: brightness(0) invert(1) !important; margin: 0 auto 15px !important; display: block !important;">
+            <p style="font-size: 1.1rem !important; font-weight: 300 !important; letter-spacing: 1px !important; opacity: 0.9 !important; margin: 0 !important; color: #FFFFFF !important; display: block !important;">
+                L'excellence paysagère en Pévèle & Hainaut
+            </p>
+        </div>
 
-    <div style="margin: 30px 0 !important; display: flex !important; justify-content: center !important; gap: 30px !important; flex-wrap: wrap !important; width: 100% !important; align-items: center !important;">
-        <a href="https://www.instagram.com/majardinpaysagiste/" target="_blank" style="color: #FFFFFF !important; font-size: 2.2rem !important; text-decoration: none !important; transition: 0.3s !important;" onmouseover="this.style.color='#B5D51E'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#FFFFFF'; this.style.transform='scale(1) Pros';">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/MAJardinpaysagiste" target="_blank" style="color: #FFFFFF !important; font-size: 2.2rem !important; text-decoration: none !important; transition: 0.3s !important;" onmouseover="this.style.color='#B5D51E'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#FFFFFF'; this.style.transform='scale(1) Pros';">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://wa.me/33612267966" target="_blank" style="color: #FFFFFF !important; font-size: 2.2rem !important; text-decoration: none !important; transition: 0.3s !important;" onmouseover="this.style.color='#B5D51E'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#FFFFFF'; this.style.transform='scale(1) Pros';">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+        <div style="margin: 30px 0 !important; display: flex !important; justify-content: center !important; gap: 30px !important; flex-wrap: wrap !important; width: 100% !important; align-items: center !important;">
+            <a href="https://www.instagram.com/majardinpaysagiste/" target="_blank" style="color: #FFFFFF !important; font-size: 2.2rem !important; text-decoration: none !important; transition: 0.3s !important;" onmouseover="this.style.color='#B5D51E'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#FFFFFF'; this.style.transform='scale(1)';">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/MAJardinpaysagiste" target="_blank" style="color: #FFFFFF !important; font-size: 2.2rem !important; text-decoration: none !important; transition: 0.3s !important;" onmouseover="this.style.color='#B5D51E'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#FFFFFF'; this.style.transform='scale(1)';">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://wa.me/33612267966" target="_blank" style="color: #FFFFFF !important; font-size: 2.2rem !important; text-decoration: none !important; transition: 0.3s !important;" onmouseover="this.style.color='#B5D51E'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#FFFFFF'; this.style.transform='scale(1)';">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
 
-    <div style="margin: 30px auto !important; max-width: 400px !important; border-top: 1px solid rgba(255,255,255,0.15) !important; padding-top: 25px !important; display: block !important; color: #FFFFFF !important;">
-        <p style="margin: 0 0 12px 0 !important; font-size: 1.05rem !important;">
-            <i class="fas fa-phone-alt" style="color: #B5D51E !important; margin-right: 12px !important;"></i> 06 12 26 79 66
-        </p>
-        <p style="margin: 0 !important; font-size: 1.05rem !important;">
-            <i class="fas fa-envelope" style="color: #B5D51E !important; margin-right: 12px !important;"></i> majardin59@gmail.com
-        </p>
-    </div>
+        <div style="margin: 30px auto !important; max-width: 400px !important; border-top: 1px solid rgba(255,255,255,0.15) !important; padding-top: 25px !important; display: block !important; color: #FFFFFF !important;">
+            <p style="margin: 0 0 12px 0 !important; font-size: 1.05rem !important;"><i class="fas fa-phone-alt" style="color: #B5D51E !important; margin-right: 12px !important;"></i> 06 12 26 79 66</p>
+            <p style="margin: 0 !important; font-size: 1.05rem !important;"><i class="fas fa-envelope" style="color: #B5D51E !important; margin-right: 12px !important;"></i> majardin59@gmail.com</p>
+        </div>
 
-    <div style="margin-top: 45px !important; display: block !important; width: 100% !important;">
-        <p style="font-size: 0.85rem !important; opacity: 0.5 !important; color: #FFFFFF !important; margin-bottom: 10px !important;">MAJARDIN © 2026 — Tous droits réservés</p>
-        <a href="mentions.html" style="color: #FFFFFF !important; opacity: 0.4 !important; font-size: 0.8rem !important; text-decoration: none !important; display: inline-block !important; border-bottom: 1px solid rgba(255,255,255,0.2) !important; padding-bottom: 2px !important;" onmouseover="this.style.opacity='1'; this.style.color='#B5D51E';" onmouseout="this.style.opacity='0.4'; this.style.color='#FFFFFF';">
-            Mentions Légales & CGU
-        </a>
-    </div>
-</footer>
+        <div style="margin-top: 45px !important; display: block !important; width: 100% !important;">
+            <p style="font-size: 0.85rem !important; opacity: 0.5 !important; color: #FFFFFF !important; margin-bottom: 10px !important;">MAJARDIN © 2026 — Tous droits réservés</p>
+            <a href="mentions.html" style="color: #FFFFFF !important; opacity: 0.4 !important; font-size: 0.8rem !important; text-decoration: none !important; display: inline-block !important; border-bottom: 1px solid rgba(255,255,255,0.2) !important; padding-bottom: 2px !important;" onmouseover="this.style.opacity='1'; this.style.color='#B5D51E';" onmouseout="this.style.opacity='0.4'; this.style.color='#FFFFFF';">Mentions Légales & CGU</a>
+        </div>
+    </footer>
+
     <script>function toggleMenu() { document.getElementById('mainNav').classList.toggle('active'); }</script>
+
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) entry.target.classList.add('reveal');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>

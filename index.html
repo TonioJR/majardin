@@ -9,8 +9,12 @@
         :root { --dark: #1B4332; --lime: #B5D51E; --soft: #F9FBF9; --white: #FFFFFF; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; transition: 0.3s ease; }
         
-        /* AJOUT : Protection contre la sélection de texte */
+        /* AJOUT : Protection et préparation de l'effet scroll */
         body { background: var(--soft); color: var(--dark); line-height: 1.6; overflow-x: hidden; -webkit-user-select: none; user-select: none; }
+        
+        /* C'est cette ligne qui permet l'effet au scroll sans changer ton HTML */
+        section { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        section.reveal { opacity: 1; transform: translateY(0); }
 
         /* HEADER UNIVERSEL FIXE */
         header { background: var(--white); padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 5px solid var(--lime); position: sticky; top: 0; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
@@ -40,7 +44,7 @@
         .card h3 { margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
 
         /* FOOTER COMPLET */
-        footer { background: var(--dark); color: white; padding: 60px 10%; text-align: center; margin-top: 50px; }
+        footer { background: var(--dark); color: white; padding: 60px 10%; text-align: center; margin-top: 50px; opacity: 1 !important; transform: none !important; }
         .socials { font-size: 2.2rem; margin: 25px 0; }
         .socials a { color: white; margin: 0 15px; text-decoration: none; display: inline-block; }
         .socials a:hover { color: var(--lime); transform: translateY(-5px); }
@@ -129,7 +133,21 @@
 
     <script>function toggleMenu() { document.getElementById('mainNav').classList.toggle('active'); }</script>
     
-    <script>document.addEventListener('contextmenu', e => e.preventDefault());</script>
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
 
     <script>
     function mettreAJourSaison() {
